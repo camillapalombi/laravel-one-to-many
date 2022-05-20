@@ -2,6 +2,10 @@
 
 use Illuminate\Database\Seeder;
 
+use App\UserInfo;
+use Faker\Generator as Faker;
+use App\User;
+
 class UserInfoSeeder extends Seeder
 {
     /**
@@ -9,8 +13,17 @@ class UserInfoSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        //
+        $users = User::all();
+
+        foreach ($users as $user) {
+            UserInfo::create([
+                'user_id'   => $user->id,
+                'address'   => $faker->address(),
+                'phone'     => $faker->phoneNumber(),
+                'birth'     => $faker->date()
+            ]);
+        }
     }
 }
