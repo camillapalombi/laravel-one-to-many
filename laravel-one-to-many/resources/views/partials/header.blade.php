@@ -8,11 +8,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active fs-5 ms-4" style="color: white" aria-current="page" href="{{ route('admin.posts.index') }}">LITSTING</a>
+                <a class="nav-link active fs-5 ms-4" style="color: white" aria-current="page" href="{{ route('admin.posts.index') }}">ALL POSTS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active fs-5 ms-5" style="color: white" href="{{ route('admin.posts.create') }}">CREATE NEW POST</a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link active fs-5 ms-5" style="color: white" href="{{ route('admin.posts.index') }}">MY POSTS</a>
+            </li>
+
+
             </ul>
         </div>
         </div>

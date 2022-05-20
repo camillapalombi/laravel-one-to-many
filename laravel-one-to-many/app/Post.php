@@ -17,7 +17,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
-        'slug'
+        'slug',
+        'user_id'
     ];
 
     static public function generateSlug($originalStr) {
@@ -29,5 +30,9 @@ class Post extends Model
             $_i++;
         }
         return $slug->__toString();
+    }
+
+    public function user() {
+        return $this->belongsTo('App\User');
     }
 }

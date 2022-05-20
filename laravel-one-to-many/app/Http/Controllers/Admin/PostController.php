@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Route;
 
 class PostController extends Controller
 {
@@ -58,7 +60,10 @@ class PostController extends Controller
     {
         $request->validate($this->getValidators(null));
 
-        $post = Post::create($request->all());
+        $formData = $request->all() + [
+            'user_id' => Auth::user()->id
+        ];
+        $post = Post::create($formData);
 
         return redirect()->route('admin.posts.show', $post->slug);
     }
