@@ -30,13 +30,22 @@
                             <td>{{ date('d/m/Y', strtotime($post->created_at)) }}</td>
                             <td>{{ date('d/m/Y', strtotime($post->updated_at)) }}</td>
                             <td>
+                                <!--VIEW -->
                                 <a class="btn btn-primary" href="{{ route('admin.posts.show', $post->slug) }}">View</a>
                             </td>
                             <td>
+                                <!--EDIT -->
+                                @if (Auth::user()->id === $post->user_id)
                                 <a class="btn btn-primary" href="{{ route('admin.posts.edit', $post->slug) }}">Edit</a>
+                                @endif
+
                             </td>
                             <td class="text-center">
+                                <!--DELETE -->
+                                @if (Auth::user()->id === $post->user_id)
                                 <button class="btn btn-danger btn-delete" data-id="{{ $post->slug }}">Delete</button>
+                                @endif
+
                             </td>
                         </tr>
                     @endforeach

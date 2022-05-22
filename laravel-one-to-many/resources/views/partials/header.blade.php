@@ -15,7 +15,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active fs-5 ms-5" style="color: white" href="{{ route('admin.posts.index') }}">MY POSTS</a>
+                <a class="nav-link active fs-5 ms-5" style="color: white" href="{{ route('admin.posts.myindex') }}">MY POSTS</a>
             </li>
 
 
