@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('title', 100);
             $table->text('content');
             $table->string('slug',100)->unique();
@@ -23,7 +23,8 @@ class CreatePostsTable extends Migration
 
             $table->foreign('user_id')
                 ->references('id') //colonna
-                ->on('users'); //tabella
+                ->on('users') //tabella
+                ->onDelete('SET NULL');
             
 
         });
