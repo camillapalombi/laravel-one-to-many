@@ -11,44 +11,6 @@
     <div class="row mb-5">
         <div class="col">
 
-
-            <p class="fs-1" style="color: rgb(112, 227, 112)">Filter your search:</p>
-            <form action="" method="get" class="row g-3 mb-5">
-
-                <div class="col-md-6">
-                    <select class="form-select" aria-label="Default select example" name="author" id="author">
-                        <option value="" selected>SELECT AN AUTHOR</option>
-
-                        @foreach ($users as $user)
-                            <option value="{{ $user->id }}" @if($user->id == $request->author) selected @endif>{{ $user->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-
-                    <div class="col-md-6">
-                        <select class="form-select" aria-label="Default select example" name="category" id="category">
-                            <option value="" selected>CHOOSE A CATEGORY</option>
-        
-                            @foreach ($categories as $category)
-                                <option value="{{ $category->id }}" @if($category->id == $request->category) selected @endif>{{ $category->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-        
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="What are you looking for?" id="search-string" name="s" value="{{ $request->s }}">
-                    </div>
-        
-                    <div class="col-md-10">
-                        <button class="btn btn-success fw-bold">APPLY FILTER</button>
-                    </div>
-            </form>
-
-
-
-
-
-
             <table class="table table-dark table-hover">
                 <thead>
                     <tr>

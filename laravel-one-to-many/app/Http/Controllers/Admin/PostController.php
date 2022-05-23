@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
 use App\Post;
 use App\Category;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Route;
@@ -35,11 +36,35 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-       $posts = Post::paginate(30);
+        $posts = Post::where('id', '>', 0);
 
-        return view('admin.posts.index', compact('posts'));
+        if ($request->s) {
+            $posts->where('title', 'LIKE', "%$request->s%");
+        }
+
+        if ($request->category) {
+            $posts->where('category_id', $request->category);
+        }
+
+        if ($request->author) {
+            $posts->where('user_id', $request->author);
+        }
+
+        $posts = $posts->paginate(20);
+
+       $categories = Category::all();
+
+       $users = User::all();
+
+        return view('admin.posts.index', 
+        [
+            'posts' => $posts,
+            'users' => $users,
+            'categories' => $categories,
+            'request'       => $request
+        ]);
     }
 
     /**
@@ -139,6 +164,8 @@ class PostController extends Controller
 
         $posts = Post::where('user_id', Auth::user()->id)->paginate(30);
 
-        return view('admin.posts.index', compact('posts'));
+        return view('admin.posts.myindex', compact('posts'));
+
+        
     }
 }
