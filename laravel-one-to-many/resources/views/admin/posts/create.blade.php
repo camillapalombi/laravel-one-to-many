@@ -37,6 +37,20 @@
                     @error('content')
                         <div class="alert alert-warning">{{ $message }}</div>
                     @enderror
+
+
+                    <!-- CATEGORIE -->
+
+                    <select class="form-select d-block mt-4 fw-bold" aria-label="Default select example" name="category_id" id="category">
+                        <option class="fw-bold" value="" selected >CHOOSE A CATEGORY</option>
+
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                    @error('category_id')
+                        <div class="alert alert-warning">{{ $message }}</div>
+                    @enderror
                 
 
                     <button type="submit" class="btn btn-primary mt-4 fw-bold">SAVE</button>

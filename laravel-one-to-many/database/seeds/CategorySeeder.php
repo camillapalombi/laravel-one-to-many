@@ -15,31 +15,31 @@ class CategorySeeder extends Seeder
         $categories = [
 
             [
-                'name' => 'Cronaca',
+                'name' => 'Chronicle',
                 'description' => 'Hola maiores dolore molestiae facere natus voluptatibus amet! Ipsa, qui pariatur.',
             ],
             [
-                'name' => 'Cultura',
+                'name' => 'Culture',
                 'description' => 'Sit amet consectetur adipisicing elit. In iste, nulla enim laudantium rerum error voluptatem quo eius eaque qui sit amet consectetur adipisicing elit. In iste, nulla enim laudantium rerum error voluptatem quo eius eaque qui Lorem ipsum dolor sit amet consectetur adipisicing elit. In iste, nulla enim laudantium rerum error voluptatem quo eius eaque qui maiores dolore molestiae facere natus voluptatibus amet! Ipsa, qui pariatur.',
             ],
             [
-                'name' => 'Tecnologia',
+                'name' => 'Tecnology',
                 'description' => 'Ipsum dolor sit amet consectetur adipisicing elit. In iste, nulla enim laudan dolore molestiae facere natus voluptatibus amet! Ipsa, qui pariatur.',
             ],
             [
-                'name' => 'Economia',
+                'name' => 'Economy',
                 'description' => 'Lorem ipsum dolor uo eius eaque qui maiores dolore molestiae facere natus voluptatibus amet! Ipsa, qui pariatur.',
             ],
             [
-                'name' => 'Curiosità',
+                'name' => 'Curiosity',
                 'description' => 'Dolor sit amet consectetur adipisicing elit. In iste, nulla enim laudantium rerum error voluptatem quo eius eaque qui maiores dolore molestiae facere natus voluptatibus amet! Ipsa, qui pariatur.',
             ],
             [
-                'name' => 'Viaggi',
+                'name' => 'Travel',
                 'description' => 'Amet consectetur adipisicing elit. In iste, nulla enim laudantium rerum error voluptatem quo eius eaque qui maiores dolore molestiae facere natus voluptatibus amet! Ipsa, qui pariatur.',
             ],
             [
-                'name' => 'Cucina',
+                'name' => 'Food',
                 'description' => 'Lorem ipsu In iste, nulla enim laudantium rerum error voluptatem quo eius eaque qui maiores dolore molestiae facere natus voluptatibus amet! Ipsa, qui pariatur.',
             ],
 
@@ -50,6 +50,6 @@ class CategorySeeder extends Seeder
 
             Category::create($category);
         }
-        
+
     }
 }
